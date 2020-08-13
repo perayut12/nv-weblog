@@ -1,21 +1,33 @@
-<template>
-  <div id="app">
-   
-    <router-view/>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-</style>
+import Vue from 'vue'
+import Router from 'vue-router'
+// Users
+import UserIndex from '@/components/Users/Index'
+import UserCreate from '@/components/Users/CreateUser'
+107
+import UserEdit from '@/components/Users/EditUser'
+import UserShow from '@/components/Users/ShowUser'
+Vue.use(Router)
+export default new Router({
+ routes: [
+ {
+ path: '/users',
+ name: 'users',
+ component: UserIndex
+ },
+ {
+ path: '/user/create',
+ name: 'users-create',
+ component: UserCreate
+ },
+ {
+ path: '/user/edit',
+ name: 'user-edit',
+ component: UserEdit
+ },
+ {
+ path: '/user',
+ name: 'user',
+ component: UserShow
+ },
+ ]
+})
